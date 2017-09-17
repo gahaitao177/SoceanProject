@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>Demo</groupId>
+    <artifactId>Demo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <name>demo-test</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <!--项目编码-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <spring.version>4.2.3.RELEASE</spring.version>
+        <aspectjweaver.version>1.8.7</aspectjweaver.version>
+        <!--数据库-->
+        <oracle.version>10.2.0.4.0</oracle.version>
+        <mybatis.version>3.4.0</mybatis.version>
+        <mybatis-spring.version>1.3.0</mybatis-spring.version>
+        <pagehelper.version>4.0.3</pagehelper.version>
+        <mybatis-generator-core.version>1.3.2</mybatis-generator-core.version>
+        <!-- logback 日志-->
+        <logback.version>1.1.7</logback.version>
+        <!--servlet-->
+        <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
+        <jsp-api.version>2.1</jsp-api.version>
+        <jstl.version>1.2</jstl.version>
+
+        <commons-lang3.version>3.4</commons-lang3.version>
+        <netty.version>4.1.5.Final</netty.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <name>nexus</name>
+            <url>http://192.168.1.54:8081/nexus/content/groups/public</url>
+        </repository>
+        <repository>
+            <id>uk</id>
+            <name>uk</name>
+            <url>http://uk.maven.org/maven2</url>
+        </repository>
+        <repository>
+            <id>cloudera</id>
+            <url>https://repository.cloudera.com/artifactory/cloudera-repos</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus</id>
+            <name>nexus</name>
+            <url>http://192.168.1.54:8081/nexus/content/groups/public</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>uk</id>
+            <name>uk</name>
+            <url>http://uk.maven.org/maven2</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <name>Nexus Release Repository</name>
+            <url>http://192.168.1.54:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://192.168.1.54:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <!--<downloadUrl>http://192.168.1.54:8081/nexus/content/groups/public</downloadUrl>-->
+        <!--<status>deployed</status>-->
+    </distributionManagement>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.11</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql_2.11</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming_2.11</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming-kafka-0-8_2.11</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka_2.11</artifactId>
+            <version>0.8.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>0.10.2.0</version>
+        </dependency>
+        <!--<dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+            <version>2.4.1</version>
+        </dependency>-->
+
+        <dependency>
+            <groupId>com.datastax.spark</groupId>
+            <artifactId>spark-cassandra-connector_2.11</artifactId>
+            <version>2.0.0-M3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+        <!-- Redis连接池需要-->
+        <dependency>
+            <groupId>commons-pool</groupId>
+            <artifactId>commons-pool</artifactId>
+            <version>1.6</version>
+        </dependency>
+
+        <!-- HBase-->
+        <!--<dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase</artifactId>
+            <version>0.98.1-cdh5.1.5</version>
+        </dependency>-->
+
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-client</artifactId>
+            <version>0.98.1-cdh5.1.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>Mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.30</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <testSourceDirectory>src/test/java</testSourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <version>3.2.1</version>
+                <configuration>
+                    <recompileMode>incremental</recompileMode>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
